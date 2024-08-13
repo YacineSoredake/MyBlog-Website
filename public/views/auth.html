@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign in</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <script type="module" src="../js/verify.mjs"></script>
+</head>
+<body class="bg-gray-100 min-h-screen flex items-center justify-center">
+   <div class="flex gap-24 flex-row-reverse">
+    <div>
+        <img class="hidden lg:block h-screen p-2 rounded-3xl" src="../images/1722.jpg" alt="Responsive Image">
+    </div>
+    <div class="flex flex-col items-start justify-center gap-7 place-self-center px-16">
+        <div>
+            <img class="h-12 mb-5" src="../images/formula-1-svgrepo-com.svg" alt="">
+            <h2 class="text-2xl text-gray-950 font-bold py-3">
+             Sign in to your account
+            </h2>
+            <h3 class="text-gray-600">
+             Not a member? <a class="text-yellow-600 font-bold hover:text-yellow-500" href="./signup.html">Start a 14 day free trial</a> 
+            </h3>
+        </div>
+       <div class="flex gap-3 flex-col items-start w-full">
+        <label for="username">Username</label>
+        <input id="username" class="block p-1 px-2 w-full border-2 border-solid border-gray-950 rounded-md shadow-sm ring-1 ring-inset ring-gray-100 placeholder:text-gray-400 focus:ring-inset focus:ring-2 focus:ring-yellow-400" type="text">
+       </div>
+       <div class="flex gap-3 flex-col items-start w-full">
+        <label for="password">Password</label>
+        <input id="password" class="block p-1 px-2 w-full border-2 border-solid border-gray-950 rounded-md shadow-sm ring-1 ring-inset ring-gray-100 placeholder:text-gray-400 focus:ring-inset focus:ring-2 focus:ring-yellow-400 " type="password">
+       </div>
+       <p id="responseMsg" class="hidden"></p>
+       <button id="sign" class="flex w-full justify-center bg-yellow-600 font-medium text-md text-gray-100 rounded-md p-1 hover:bg-yellow-500">Sign in</button>
+    </div>
+   </div>
+</body>
+</html>

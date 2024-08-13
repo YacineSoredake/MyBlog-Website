@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link href="styles.css" rel="stylesheet">
+    <title>Profile</title>
+</head>
+<body class="bg-gray-200">
+    <div class="bg-gray-800 p-4 mb-5 flex flex-row-reverse justify-between">
+        <div class="flex items-center gap-5">
+            <button id="addBlog" class="btn flex items-center bg-green-500 p-1 rounded-md px-2">
+                <p class="text-gray-50">Add Blog</p>
+                <img class="plusImg h-7 m-0" src="../images/add-svgrepo-com.svg" alt="">
+            </button>
+           <p class="text-gray-50" id="usrna"></p>
+        </div>
+       <img class="h-8" src="../images/formula-1-svgrepo-com.svg" alt="">
+    </div>
+    
+    <main class="flex items-center flex-col gap-2">
+        <section class="w-9/12 relative bg-gray-50 rounded-xl shadow-md">
+            <div class="flex flex-col">
+                <img class="min-w-9/12 m-0 h-44 rounded-t-xl" src="../images//pngtree-red-photo-creative-yellow-background-hd-wallpaper-download-vector-image_13093768.jpg" alt="">
+                <img class="shadow-md border-solid border-2 h-24 w-24 absolute bottom-32 self-center rounded-full" id="userImg" alt="">
+                <label for="imagePre" class="block w-full h-20 text-sm text-gray-700 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 focus:outline-none p-2 mb-4 flex items-center justify-center hover:bg-gray-100">
+                    <span class="text-lg hover:text-green-600 font-semibold">Select Image</span>
+                    <input class="hidden" type="file" name="image" id="imagePre">
+                </label>
+                <button id="update-btn" class="self-center max-w-min bg-blue-500 text-white px-4 py-2 mb-3 rounded-lg hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-300 transition duration-300">confirm</button>
+            </div>
+        </section>
+    </main>
+
+    <div class="bg-gray-700 text-gray-50 text-xm flex flex-col items-center gap-5">
+        <div class="flex gap-5">
+            <div class="flex flex-col">
+                <p class="font-bold py-3 hover:underline">Help</p>
+                
+            </div>
+            <div class="flex flex-col">
+                <p class="font-bold py-3 hover:underline">Community</p>
+               
+            </div>
+            <div class="flex flex-col">
+                <p class="font-bold py-3 hover:underline">Developers</p>
+                
+            </div>
+        </div>
+    </div> 
+
+    <script src="../js/updatePic.mjs" type="module"></script>   
+    <script>
+        const imageInpt = document.getElementById("imagePre");
+        const imagePreview = document.getElementById('userImg');
+        imageInpt.addEventListener('change', function(event) {
+            const file = event.target.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    imagePreview.src = e.target.result;
+                }
+                reader.readAsDataURL(file);
+            }
+        });
+    </script>
+</body>
+</html>

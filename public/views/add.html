@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link href="styles.css" rel="stylesheet">
+    <script type="module" src="../js/add.mjs"></script>
+    <title>Profile</title>
+</head>
+<body class="bg-gray-200">
+    <div class="bg-gray-800 p-4 mb-5 flex flex-row-reverse justify-between">
+        <a id="visitprf" class="text-gray-50">Profile</a>
+        <img class="h-8" src="../images/formula-1-svgrepo-com.svg" alt="">
+    </div>
+    <button onclick="history.back()" class="self-start bg-gray-500 text-sm text-white p-2 rounded ml-4 mb-4">Go Back</button>
+    <main class="flex items-center flex-col gap-2">
+        <section class="grid grid-cols-1 lg:grid-cols-2 gap-5 w-11/12 lg:w-9/12 mb-12 p-3 bg-gray-50 rounded-xl shadow-md">
+            <div class="flex flex-col gap-3">
+                <div id="conter"></div>
+                <input class="p-1 bg-gray-50 text-xs shadow-sm rounded-lg" id="formdate" type="date" readonly>
+                <label for="formTitle">Title</label>
+                <input class="p-1 border-2 border-yellow-400 shadow-md rounded-md w-full" id="formTitle" type="text" placeholder="Title">
+                <label for="formField">Field</label>
+                <input class="p-1 border-2 border-yellow-400 shadow-md rounded-md w-full" id="formField" type="text" placeholder="Field">
+                <label for="formDesc">Description</label>
+                <textarea rows="4" class="p-1 border-2 border-yellow-400 shadow-md rounded-md w-full" id="formDesc" placeholder="Description"></textarea>
+            </div>
+            <div class="flex flex-col items-center gap-3">
+                <label for="image" class="bg-yellow-400 text-gray-950 p-2 rounded-md cursor-pointer hover:bg-yellow-500">Choose File</label>
+                <img id="imagePreview" class="image-preview hidden w-full h-auto max-h-64 object-cover rounded-md" src="" alt="Image Preview" />
+                <input type="file" name="image" id="image" accept="image/*" class="hidden-input hidden">
+                <button id="clearImage" class="bg-red-500 text-white p-2 rounded-md hidden">Clear</button>
+            </div>
+            <button class="bg-yellow-400 text-gray-950 p-2 rounded-md w-full hover:bg-yellow-500" id="add">Add Blog</button>
+            <p id="responseMsg" class="text-center text-red-500"></p>
+        </section>
+    </main>
+    <footer class="bg-gray-700 text-gray-50 text-xm flex flex-col items-center gap-5 p-4">
+        <div class="flex gap-5 flex-wrap justify-center">
+            <p>Conditions d'utilisation</p>
+            <p>Confidentialité</p>  
+            <p>Règlement relatif au contenu</p> 
+        </div>
+    </footer> 
+    <script>
+        const date = new Date();
+        const year = date.getFullYear();
+        const month = String(date.getMonth() + 1).padStart(2, '0');
+        const day = String(date.getDate()).padStart(2, '0');
+        const formattedDate = `${year}-${month}-${day}`;
+        const inptdate = document.getElementById("formdate");
+        inptdate.value = formattedDate;
+
+        const imageInput = document.getElementById('image');
+        const imagePreview = document.getElementById('imagePreview');
+        const clearImageBtn = document.getElementById('clearImage');
+
+        imageInput.addEventListener('change', function(event) {
+            const file = event.target.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    imagePreview.src = e.target.result;
+                    imagePreview.classList.remove('hidden');
+                }
+                reader.readAsDataURL(file);
+                clearImageBtn.classList.remove('hidden');
+            }
+        });
+
+        clearImageBtn.addEventListener('click', function() {
+            imageInput.value = ''; // Clear file input
+            imagePreview.src = ''; // Clear image preview
+            imagePreview.classList.add('hidden');
+            clearImageBtn.classList.add('hidden');
+        });
+    </script>
+</body>
+</html>

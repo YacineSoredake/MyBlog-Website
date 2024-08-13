@@ -1,0 +1,87 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom styles */
+.text-custom-green {
+  color: #10b981;
+}
+.bg-custom-blue {
+  color: #06b6d4;
+}
+.bg-custom-Emerald {
+  color: #06b6d4;
+}
+/* Initial header style */
+#mainHeader {
+    transition: background-color 0.3s, padding 0.3s, position 0.3s, top 0.3s;
+  }
+  
+  /* Scrolled header style */
+  .header-scrolled {
+    background-color: hsl(0, 0%, 100%); /* Change background color *//* Adjust padding */
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000; /* Ensure it stays above other content */
+  }
+
+.btn:hover .plusImg{
+  transform: rotate(90deg);
+  transition: 250ms;
+}
+.update-btn:hover{
+  transform: rotate(90deg);
+  transition: 250ms;
+}
+html, body {
+  height: 100%;
+}
+body {
+  display: flex;
+  flex-direction: column;
+}
+main {
+  flex: 1;
+}
+.custom-file-upload {
+    display: inline-block;
+    cursor: pointer;
+    padding: 0.5rem 1rem;
+    background-color: #4caf50; /* Tailwind's green-500 */
+    color: white;
+    border-radius: 0.25rem; /* Tailwind's rounded */
+    transition: background-color 0.3s;
+}
+
+.custom-file-upload:hover {
+    background-color: #45a049; /* Darker shade of green-500 */
+}
+
+.hidden-input {
+    display: none;
+}
+
+/* Styles for the image preview */
+.image-preview {
+    margin-top: 1rem; /* Tailwind's mt-4 */
+    width: 100%;
+    max-width: 15rem; /* Tailwind's max-w-xs */
+    border-radius: 0.5rem; /* Tailwind's rounded-lg */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Tailwind's shadow-md */
+}
+
+/* Styles for the clear button */
+.clear-button {
+    margin-left: 0.5rem; /* Tailwind's ml-2 */
+    background-color: #f44336; /* Tailwind's red-500 */
+    color: white;
+    padding: 0.25rem 0.5rem;
+    border-radius: 0.25rem; /* Tailwind's rounded */
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.clear-button:hover {
+    background-color: #e53935; /* Darker shade of red-500 */
+}

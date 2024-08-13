@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <!-- Tailwind CSS CDN -->
+    <script type="module" src="../js/register.mjs"></script>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        /* Hide the filename text in file input */
+        .file-input {
+            position: relative;
+            overflow: hidden;
+            cursor: pointer;
+        }
+        .file-input input[type="file"] {
+            position: absolute;
+            opacity: 0;
+        }
+        .file-input img {
+            display: none;
+        }
+    </style>
+</head>
+<body class="bg-gray-100">
+    <div class="p-5">
+        <!-- Form Section -->
+        <div id="registerForm" class="flex flex-col w-full items-center justify-center gap-7 px-6 py-8 lg:px-16 lg:py-16 mx-auto max-w-4xl bg-white shadow-lg rounded-lg">
+            <div>
+                <h2 class="text-2xl text-gray-900 font-bold py-3">
+                    Register for an Account
+                </h2>
+                <h3 class="text-gray-600">
+                    Already a member? <a class="text-yellow-600 font-bold hover:text-yellow-500" href="./auth.html">Sign in</a>
+                </h3>
+            </div>
+            <div class="flex flex-col sm:flex-row sm:gap-5 w-full">
+                <div class="flex gap-3 flex-col items-start w-full sm:w-1/2">
+                    <label for="usernameForm" class="block text-gray-700">Username</label>
+                    <input id="usernameForm" class="block p-2 px-3 w-full border-2 border-solid border-gray-300 rounded-md shadow-sm ring-1 ring-inset ring-gray-200 placeholder:text-gray-400 focus:ring-2 focus:ring-yellow-400" type="text">
+                </div>
+                <div class="flex gap-3 flex-col items-start w-full sm:w-1/2">
+                    <label for="passwordForm" class="block text-gray-700">Password</label>
+                    <input id="passwordForm" class="block p-2 px-3 w-full border-2 border-solid border-gray-300 rounded-md shadow-sm ring-1 ring-inset ring-gray-200 placeholder:text-gray-400 focus:ring-2 focus:ring-yellow-400" type="password">
+                </div>
+            </div>
+            <div class="flex flex-col sm:flex-row sm:gap-5 w-full">
+                <div class="flex gap-3 flex-col items-start w-full sm:w-1/2">
+                    <label for="nameForm" class="block text-gray-700">Full Name</label>
+                    <input id="nameForm" class="block p-2 px-3 w-full border-2 border-solid border-gray-300 rounded-md shadow-sm ring-1 ring-inset ring-gray-200 placeholder:text-gray-400 focus:ring-2 focus:ring-yellow-400" type="text">
+                </div>
+                <div class="flex gap-3 flex-col items-start w-full sm:w-1/2">
+                    <label for="occupForm" class="block text-gray-700">Occupation</label>
+                    <input id="occupForm" class="block p-2 px-3 w-full border-2 border-solid border-gray-300 rounded-md shadow-sm ring-1 ring-inset ring-gray-200 placeholder:text-gray-400 focus:ring-2 focus:ring-yellow-400" type="text">
+                </div>
+            </div>
+            <p id="respMsg" class="bg-red-100 rounded-xs p-2 text-red-500 text-xs self-center hidden">Response message here</p>
+            <button id="btnReg" type="button" class="w-full bg-yellow-600 text-white py-2 rounded-md hover:bg-yellow-500">Register</button>
+        </div>
+    </div>
+    <script>
+        const regBtn = document.getElementById("btnReg");
+
+        regBtn.addEventListener("click", (event) => {
+            const username = document.getElementById("usernameForm").value;
+            const password = document.getElementById("passwordForm").value;
+            const name = document.getElementById("nameForm").value;
+            const occupation = document.getElementById("occupForm").value;
+            
+            console.log("Register button clicked");
+            console.log(`Username: ${username}, Password: ${password}, Occupation: ${occupation}, Name: ${name}`);
+        });
+    </script>
+</body>
+</html>

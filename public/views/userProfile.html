@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link href="styles.css" rel="stylesheet">
+    <title>Profile</title>
+</head>
+<body class="bg-gray-200">
+    <div class="bg-gray-800 p-4 mb-5 flex flex-row-reverse justify-between">
+        <div class="flex items-center gap-5">
+            <button id="addBlog" class="btn flex items-center bg-green-500 p-1 rounded-md px-2">
+                <p class="text-gray-50">Add Blog</p>
+                <img class="plusImg h-7 m-0" src="../images/add-svgrepo-com.svg" alt="">
+            </button>
+           <p class="text-gray-50" id="usrna"></p>
+        </div>
+       <img class="h-8" src="../images/formula-1-svgrepo-com.svg" alt="">
+    </div>
+    
+    <main class="flex items-center flex-col gap-2">
+        <section class="w-9/12 relative bg-gray-50 rounded-xl shadow-md">
+            <div class="flex flex-col">
+                <img class="min-w-9/12 m-0 h-44 rounded-t-xl" src="../images//pngtree-red-photo-creative-yellow-background-hd-wallpaper-download-vector-image_13093768.jpg" alt="">
+                <img class="h-24 w-24 absolute bottom-24 self-center rounded-full" id="userImg" alt="">
+            </div>
+            <div class="flex justify-center h-36 items-center gap-2">
+               <p id="name" class="text-2xl font-medium"></p> <a href="./changePic.html"><img class="h-6 update-btn" src="../images/update-alt-svgrepo-com.svg" alt=""></a>
+            </div>
+        </section>
+        <section class="flex justify-evenly h-24 items-center w-9/12  bg-gray-50 rounded-xl shadow-md">
+            <div class="">
+                <p id="fulname" class="font-medium text-md text-gray-500">Follower</p>
+            </div>
+            <div class="">
+                <p id="ocupp" class="font-medium text-md text-gray-500">Posted Blog</p>
+            </div>
+        </section>
+        <h2 class="text-2xl text-red-500 font-medium">
+            blogs
+        </h2>
+        <section id="blogsContainer" class="grid grid-cols-1 gap-5 w-9/12 mb-12 place-items-center bg-gray-50 p-3 rounded-xl shadow-md">
+            <!-- blogs -->
+        </section>
+    </main>
+
+    <div class="bg-gray-700 text-gray-50 text-xm flex flex-col items-center gap-5">
+        <div class="flex gap-5">
+            <div class="flex flex-col">
+                <p class="font-bold py-3 hover:underline">Help</p>
+                
+            </div>
+            <div class="flex flex-col">
+                <p class="font-bold py-3 hover:underline">Community</p>
+               
+            </div>
+            <div class="flex flex-col">
+                <p class="font-bold py-3 hover:underline">Developpers</p>
+                
+            </div>
+        </div>
+       
+       
+    </div> 
+<script type="module" src="/public/js/checkprf.mjs"></script>    
+</body>
+</html>

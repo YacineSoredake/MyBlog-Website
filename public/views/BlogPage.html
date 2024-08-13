@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link href="styles.css" rel="stylesheet">
+    <title>Profile</title>
+</head>
+<body class="bg-gray-200">
+    <div class="bg-gray-800 p-4 mb-5 flex flex-row-reverse justify-between">
+        <a id="visitprf" class="text-gray-50">profil</a>
+       <img class="h-8" src="../images/formula-1-svgrepo-com.svg" alt="">
+    </div>
+    
+    <main class="flex items-center flex-col gap-2">
+        <p id="responseMsg"></p>
+        <button onclick="history.back()" class="self-start bg-gray-500 text-sm text-white p-2 rounded ml-4 mb-4">Go Back</button>
+        <section id="sectioon" class="lg:flex gap-5 justify-evenly p-3 items-center w-9/12  bg-gray-50 rounded-xl shadow-md">
+            
+        </section> 
+    </main>
+
+    <div class="bg-gray-700 text-gray-50 text-xm flex flex-col items-center gap-5 p-1">
+        <div class="flex gap-5">
+            <div class="flex flex-col">
+                <p class="font-bold py-1 hover:underline">Help</p>
+            </div>
+            <div class="flex flex-col">
+                <p class="font-bold py-1 hover:underline">Community</p>
+               
+            </div>
+            <div class="flex flex-col">
+                <p class="font-bold py-1 hover:underline">Developpers</p>
+            </div>
+        </div>
+    </div>  
+    <script src="../js/fetchOneBlog.mjs"></script>  
+</body>
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link href="styles.css" rel="stylesheet">
+    <title>blogs</title>
+</head>
+<body>
+    <div class="bg-gray-800 p-4 mb-5 flex flex-row-reverse justify-between">
+        <div class="flex items-center gap-7">
+            <a id="visitprf" class="text-gray-50">profil</a>
+            <div class="relative">
+                <button id="show-btn">
+                    <img class="h-8" src="../images/archive-down-minimlistic-svgrepo-com.svg" alt="">
+                </button>
+                <button id="logout-btn" class="hidden absolute top-8 right-2 mt-2 bg-gray-700 text-gray-50 px-4 py-2 rounded">Logout</button>
+            </div>
+        </div>
+        <img class="h-8" src="../images/formula-1-svgrepo-com.svg" alt="">
+    </div>
+    <div class="flex flex-col items-center gap-5 p-2">
+        <h1 class="text-yellow-400 font-bold text-3xl">
+            From the blog
+        </h1>
+        <h3 class="text-custom-green text-lg">
+            Learn how to grow your business with our expert advice.
+        </h3>
+        <div id="blogContainer" class="sm:grid grid-cols-1 gap-7 py-3 md:grid-cols-2 p-2 lg:grid-cols-3 p-0">
+        </div>
+    </div> 
+    <div class="bg-gray-700 text-gray-50 text-xm flex flex-col items-center gap-5">
+        <div class="flex gap-5">
+            <div class="flex flex-col">
+                <p class="font-bold py-3 hover:underline">Help</p>
+            </div>
+            <div class="flex flex-col">
+                <p class="font-bold py-3 hover:underline">Community</p>
+            </div>
+            <div class="flex flex-col">
+                <p class="font-bold py-3 hover:underline">Developpers</p>
+            </div>
+        </div>
+       
+    </div> 
+    <script type="module" src="/public/js/fetch.mjs"></script> 
+    <script>
+document.addEventListener("DOMContentLoaded", () => {
+    const showBtn = document.getElementById("show-btn");
+    const logoutBtn = document.getElementById("logout-btn");
+    let isRotated = false;
+
+    showBtn.addEventListener("click", () => {
+        logoutBtn.classList.toggle("hidden");
+        
+        if (isRotated) {
+            showBtn.style.transform = "rotate(0deg)";
+            showBtn.style.transition = "250ms";
+        } else {
+            showBtn.style.transform = "rotate(180deg)";
+            showBtn.style.transition = "250ms";
+        }
+        
+        isRotated = !isRotated;
+    });
+});
+
+
+    </script>
+</body>
+</html>
